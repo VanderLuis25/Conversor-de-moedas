@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  outline: none;
+}
+
+body {
+  background: url(./assets/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+  transform-origin: center center;
+  perspective: 1000px;
+  animation: girar-moeda 3s ease-in-out infinite;
+}
+@keyframes girar-moeda {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  gap: 16px;
+}
+main section {
+  background-color: rgba(255, 255, 255, 0.308);
+  width: 300px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+}
+.valores-container {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  padding: 20px;
+}
+.valor-convertido {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.currency-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.currency-box img {
+  width: 50px;
+  cursor: pointer;
+  margin: 4px;
+}
+.currency-box img:hover {
+  scale: 1.2;
+}
+.currency-box p {
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: rgb(2, 40, 109);
+}
+.valor-convertido .seta {
+  width: 50px;
+  margin: 5px;
+}
+
+.valores-container label {
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px;
+  color: rgb(2, 40, 109);
+}
+
+.valores-container .currency-source {
+  width: 220px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(207, 206, 204, 0.781);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  color: rgb(24, 112, 100);
+}
+.valores-container .currency-source:hover {
+  border: 1px solid darkslategray;
+}
+.valores-container .currency-select {
+  width: 220px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(207, 206, 204, 0.781);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  color: rgb(24, 112, 100);
+}
+.valores-container .currency-select:hover {
+  border: 1px solid darkslategray;
+}
+.input-currency {
+  width: 220px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(207, 206, 204, 0.781);
+  font-weight: 500;
+  font-size: 14px;
+  color: rgb(24, 112, 100);
+}
+.input-currency:hover {
+  border: 1px solid darkslategray;
+}
+.convert-button {
+  background-color: darkslategray;
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+}
+.convert-button:hover {
+  scale: 1.02;
+  background-color: rgb(34, 136, 136);
+}
+
+.convert-button:active {
+  scale: 1.002;
+  background-color: rgb(2, 43, 43);
+  border: 3px solid #000000;
+}
+
+/* ============== RESPONSIVIDADE ============== */
+
+/* Notebooks e Desktops (o estilo padrão já atende bem) */
+@media (min-width: 1025px) {
+  main {
+    max-width: 600px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  main {
+    width: 90%;
+  }
+}
+
+/* Celulares */
+@media (max-width: 620px) {
+  main {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  main section {
+    width: 90%;
+    height: auto;
+  }
+
+  .valores-container {
+    padding: 20px;
+  }
+
+  .valores-container label,
+  .valores-container .currency-source,
+  .valores-container .currency-select,
+  .input-currency,
+  .convert-button {
+    width: 100%;
+  }
+
+  .valor-convertido {
+    padding: 20px;
+  }
+
+  .valor-convertido .seta {
+    transform: rotate(90deg);
+  }
+}
